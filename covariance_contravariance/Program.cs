@@ -79,6 +79,14 @@ namespace covariance_contravariance
             IEnumerable<string> listL3 = new List<string>();
             IEnumerable<object> lis = listL3;
 
+            // 协变
+            var employees = new List<Teacher>();
+            PrintFullName(employees);
+
+            // 协变
+            var students = new List<Student>();
+            PrintFullName(students);
+
             // 协变 逆变只适用于引用类型
             IEnumerable<int> listOfInt = new List<int>();
             //IEnumerable<object> lo = listOfInt;
@@ -124,6 +132,22 @@ namespace covariance_contravariance
 
         public static L3 RL3PL3(L2 f)
         { return new L3(); }
+
+        public static void PrintFullName(IEnumerable<Person> persons)
+        {
+
+        }
+    }
+
+    public abstract class Person
+    {
+    }
+    public class Teacher: Person
+    {
+    }
+    
+    public class Student: Person
+    {
     }
 
     internal class Lion : Animal
